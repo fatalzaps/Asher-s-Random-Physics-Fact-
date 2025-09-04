@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physics Fact Generator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .fact-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px 35px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      max-width: 600px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #00aaff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0088cc;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔬 Asher's Random Physics Fact</h1>
+  <div class="fact-box" id="factBox">Loading fact...</div>
+  <button onclick="showNewFact()">Show Another Fact</button>
+
+  <script>
+    const facts = [
+      "Light behaves both as a wave and a particle — that's wave-particle duality.",
+      "Absolute zero is the coldest possible temperature: −273.15°C.",
+      "The speed of light is about 299,792,458 meters per second.",
+      "Entropy always increases in a closed system — the universe loves chaos.",
+      "Quantum entanglement links particles instantly, no matter the distance.",
+      "A neutron star is so dense, a teaspoon of it would weigh billions of tons.",
+      "Time slows down near massive objects — thanks, Einstein.",
+      "The Higgs boson gives particles mass via the Higgs field.",
+      "Sound can't travel through space — there's no medium for it.",
+      "Electricity and magnetism are two sides of the same force: electromagnetism.",
+      "The loudest possible sound in air is about 194 decibels — beyond that, the pressure wave becomes a shock wave instead of a sound wave."
+    ];
+
+    function showNewFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById("factBox").textContent = facts[randomIndex];
+    }
+
+    // Show one fact on initial load
+    showNewFact();
+  </script>
+</body>
+</html>
